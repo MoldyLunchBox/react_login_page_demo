@@ -1,14 +1,22 @@
 
-import PropTypes from 'prop-types'
 import Button from './Button'
-const Header = ({title}) => {
+import PropTypes from 'prop-types'
+import { useContext } from 'react';
+import { AuthContext } from '../context';
+import LoginForm from './LoginForm';
+import UserInfo from './UserInfo';
+
+const Header = ({ title }) => {
+    const authContext = useContext(AuthContext);
     return (
         <header className='header'>
-            <h1>  {title}</h1>
-            <Button color='green' text='login' onClick={onClick}/>
+            {/* <h1>  {title}</h1> */}
+            {authContext.auth.isAuth ? <h1>{title}</h1> : <LoginForm />}
+            {/* <Button color='green' text='login' /> */}
         </header>
     )
 }
+
 
 Header.defaultProps = {
     title: 'default title'

@@ -1,10 +1,13 @@
 import Header from './components/Header'
+import { AuthProvider } from './context';
 function App() {
   return (
     <div className="container">
-    <Header />
-      </div>
-    
+      <AuthProvider>
+        <Header />
+      </AuthProvider>
+    </div>
+
   )
 }
 
