@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 const userInfo = [
     {
         id: 1,
@@ -22,19 +24,22 @@ const userInfo = [
 ] 
 
 function user_details(addr){
-    alert(addr);
+    <h3>{addr}</h3>;
 }
 
 const UserInfo = () => {
+    const [address, setAddress] = useState('');
+
     return (
         <table>
            {
                
                userInfo.map((user) =>(
-                <tr>{user.name}<input type="radiobox" onClick={user_details(user.address)}></input> </tr>
+                <tr>{user.name}<input type="radio" name="check"  onChange={() => setAddress(user.address)}></input> </tr>
                
                ))
-           } 
+           }
+           <tr>{address}</tr>         
         </table>
     )
 }
