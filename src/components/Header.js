@@ -11,7 +11,7 @@ const Header = ({ title }) => {
     return (
         <header className='header'>
             {/* <h1>  {title}</h1> */}
-            {authContext.auth.isAuth ? <h1>{title}</h1> : <LoginForm />}
+            {authContext.auth.isAuth ? <UserInfo /> : <LoginForm />}
             {/* <Button color='green' text='login' /> */}
         </header>
     )

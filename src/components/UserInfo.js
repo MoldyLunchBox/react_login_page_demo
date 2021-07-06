@@ -14,18 +14,29 @@ const userInfo = [
         name: 'new guy',
         address: 'rue defdf okld kfdkfd lkfdfl',
     },
+    {
+        id: 3,
+        name: 'new guy',
+        address: 'rue defdf okld kfdkfd lkfdfl',
+    },
 ] 
+
+function user_details(addr){
+    alert(addr);
+}
 
 const UserInfo = () => {
     return (
-        <>
+        <table>
            {
+               
                userInfo.map((user) =>(
-                   <h3>{user.name}</h3>
+                <tr>{user.name}<input type="radiobox" onClick={user_details(user.address)}></input> </tr>
+               
                ))
            } 
-        </>
+        </table>
     )
 }
 
-export default UserInfo
+export default UserInfo;
